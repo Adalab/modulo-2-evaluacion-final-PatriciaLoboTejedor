@@ -1,7 +1,5 @@
-// const showsList = document.querySelector(".js-showsList");
-
+// Array vacio que llenaré con los datos de la API
 let arrayData = [];
-let favoriteShows = [];
 
 // Traigo el API de series
 function getShows() {
@@ -25,4 +23,18 @@ if (localStorage.getItem("shows") === null) {
   // Lo recupero del localStorage y lo pinto
   arrayData = JSON.parse(localStorage.getItem("shows"));
   renderShows(arrayData);
+}
+
+function renderShows(data) {
+  // Creo una variable vacia con la que más tarde escribiré en el html
+  let listHtml = "";
+
+  // A través de un bucle, recorro mi API (array de objetos)
+  // y extraigo los datos que necesito pintar
+  for (const showItem of data) {
+    listHtml += `<li class="js-showCard"><h3>${showItem.name}</h3><img src="${showItem.image.medium}" alt="${showItem.name}"></li>`;
+  }
+
+  // Lo pinto en el html
+  showsList.innerHTML = listHtml;
 }
