@@ -25,7 +25,7 @@ function getShows() {
 // Evento que realiza la búsqueda cuando se hace click sobre search
 inputButton.addEventListener("click", getShows);
 
-if (localStorage.getItem("lastSearh") === null) {
+if (localStorage.getItem("favoritesShows") === null) {
   getShows();
 } else {
   // Sí tiene los datos guardados
