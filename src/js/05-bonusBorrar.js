@@ -17,13 +17,25 @@ function handleRemoveFavorites(ev) {
   const itemShowInfo = arrayFavoriteShows.findIndex(
     (showItem) => showItem.show.id === selectedCardId
   );
+  console.log(itemShowInfo); // No me da la ubicacion del indice que necesito
 
   // Eliminamos ese elemento del array a traves de su ubicación en el index
-  arrayFavoriteShows.splice(itemShowInfo - 1, 1);
-
+  arrayFavoriteShows.splice(itemShowInfo, 1);
+  console.log(itemShowInfo);
   // y volvemos a pintar
   renderFavoriteShows();
 
   // Guardamos los favoritos en localStorage para poder recupearlo al recargar
   localStorage.setItem("favoritesShows", JSON.stringify(arrayFavoriteShows));
 }
+
+const buttonRemoveAll = document.querySelector(".js-buttonRemoveAll");
+function handleRemoveAllFavorites() {
+  // Vaciamos el array
+  localStorage.clear("favoritesShows");
+  arrayFavoriteShows.reset();
+  console.log(arrayFavoriteShows);
+  // y volvemos a pintar
+  renderFavoriteShows();
+}
+buttonRemoveAll.addEventListener("click", handleRemoveAllFavorites);

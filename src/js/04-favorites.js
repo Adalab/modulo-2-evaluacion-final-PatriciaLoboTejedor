@@ -72,6 +72,7 @@ function renderFavoriteShows() {
     listFavoritesHtml += `</li>`;
   }
   listFavoritesHtml += `</ul>`;
+  listFavoritesHtml += `<input class="js-buttonRemoveAll" type="button" value="Delete All"/>`;
 
   // Lo pinto en el html
   favoritesSection.innerHTML = listFavoritesHtml;
