@@ -10,7 +10,7 @@ form.addEventListener("submit", handleSubmit);
 // 2)recojo texto
 // 3)filtro por texto
 // 4)ejecuto la búsqueda
-// 5)pinto el filtro
+// 5)pinto el filtro = la busqueda
 
 // Función de busqueda a través del input de texto
 function searchShowCards() {
