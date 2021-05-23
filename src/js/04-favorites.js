@@ -61,7 +61,7 @@ function renderFavoriteShows() {
   // A través de un bucle, recorro mi API (array de objetos)
   // y extraigo los datos que necesito pintar
   for (const showFavoriteItem of arrayFavoriteShows) {
-    listFavoritesHtml += `<li id="${showFavoriteItem.show.id}" class="js-showCard">`;
+    listFavoritesHtml += `<li id="${showFavoriteItem.show.id}" class="js-showFavoriteCard">`;
     listFavoritesHtml += `<h3>${showFavoriteItem.show.name}</h3>`;
     if (showFavoriteItem.show.image === null) {
       listFavoritesHtml += `<img src="${imgDefault}" alt="${showFavoriteItem.show.name}">`;
@@ -75,6 +75,8 @@ function renderFavoriteShows() {
 
   // Lo pinto en el html
   favoritesSection.innerHTML = listFavoritesHtml;
+
+  addListenersToFavoriteShows();
 }
 
 // Recuperar los favoritos del localStorage y mantenlos pintados en la lista

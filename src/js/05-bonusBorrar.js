@@ -1,25 +1,29 @@
 // Eliminar elementos favoritos de listado lateral
-/*function addListenersToShows() {
+function addListenersToFavoriteShows() {
   const buttonsRemove = document.querySelectorAll(".js-buttonRemove");
   for (const buttonRemove of buttonsRemove) {
     buttonRemove.addEventListener("click", handleRemoveFavorites);
   }
 }
-addListenersToShows();*/
 
-/*function handleRemoveFavorites(ev) {
-  // Reconoce la tarjeta de cada serie pinches donde pinches
+function handleRemoveFavorites(ev) {
+  // Reconoce la tarjeta favorita de cada serie pinches donde pinches
   const selectedPreviewShowCard = ev.currentTarget;
-  console.log(selectedPreviewShowCard);
-
-  // Cambia a la clase favorites cuando pinchas sobre la tarjeta
-  selectedShowCard.classList.toggle("favorites");
 
   // Reconoce el id del elemento clickado
-  const selectedCardId = parseInt(selectedShowCard.id);
+  const selectedCardId = parseInt(selectedPreviewShowCard.id);
 
-  // Buscamos el elemento por su id dentro de nuestro arrayData
-  const itemShowInfo = arrayData.find(
+  // Buscamos el elemento por su id dentro de nuestro array de Favoritos
+  const itemShowInfo = arrayFavoriteShows.findIndex(
     (showItem) => showItem.show.id === selectedCardId
   );
-}*/
+
+  // Eliminamos ese elemento del array a traves de su ubicación en el index
+  arrayFavoriteShows.splice(itemShowInfo - 1, 1);
+
+  // y volvemos a pintar
+  renderFavoriteShows();
+
+  // Guardamos los favoritos en localStorage para poder recupearlo al recargar
+  localStorage.setItem("favoritesShows", JSON.stringify(arrayFavoriteShows));
+}
