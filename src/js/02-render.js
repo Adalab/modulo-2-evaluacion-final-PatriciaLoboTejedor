@@ -37,4 +37,8 @@ function renderShows(data) {
 
   // Lo pinto en el html
   showsList.innerHTML = listHtml;
+
+  // Invoco a la función que escucha mis fichas de series
+  // para que se puedan seleccionarlas como favoritas
+  addListenersToShows();
 }
