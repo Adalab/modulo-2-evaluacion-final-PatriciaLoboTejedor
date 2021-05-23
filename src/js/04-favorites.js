@@ -11,54 +11,74 @@ function addListenersToShows() {
 function handleFavoriteClickCard(event) {
   // Reconoce la tarjeta de cada serie pinches donde pinches
   const selectedShowCard = event.currentTarget;
+
   // Cambia a la clase favorites cuando pinchas sobre la tarjeta
   selectedShowCard.classList.toggle("favorites");
+
   // Reconoce el id del elemento clickado
   const selectedCardId = parseInt(selectedShowCard.id);
+
   // Buscamos el elemento por su id dentro de nuestro arrayData
   const itemShowInfo = arrayData.find(
-    (showItem) => showItem.id === selectedCardId
+    (showItem) => showItem.show.id === selectedCardId
   );
-  // Elementos id en nuestro array de favoritos
-  const showCardFav = arrayFavoriteShows.find(
-    (elementCardShow) => elementCardShow.id === selectedCardId
+
+  // Buscar si la paleta clickada está en favoritos
+  const isPresent = arrayFavoriteShows.find(
+    (favoriteId) => favoriteId === itemShowInfo
   );
-  // Condicional para actuar en función de click a favoritos:
-  if (showCardFav === undefined) {
-    // Si todavía no está en el array de favoritos = lo añadimos
+
+  if (isPresent === undefined) {
+    // El ID de la paleta en la que ha hecho click no está en el array de favoritos
     arrayFavoriteShows.push(itemShowInfo);
   } else {
-    // Si ya estaba en el array de favoritos = lo quitamos
     arrayFavoriteShows = arrayFavoriteShows.filter(
-      (showCard) => showCard.id !== selectedCardId
+      (favoriteId) => favoriteId !== itemShowInfo
     );
   }
+
+  renderFavoriteShows();
 
   // Guardamos los favoritos en localStorage para poder recupearlo al recargar
   localStorage.setItem("favoritesShows", JSON.stringify(arrayFavoriteShows));
 
-  renderFavoritesShows(arrayFavoriteShows);
+  // Si ya esta en 'My Favourite Shows' como le digo que no me la añada ni la pinte de nuevo?
+  /*if (isPresent === itemShowInfo) {
+    // El ID de la paleta está ya en favoritos
+    arrayFavoriteShows = arrayFavoriteShows.filter(
+      (favoriteId) => favoriteId !== itemShowInfo
+    );
+  } else {
+    arrayFavoriteShows.push(itemShowInfo);
+  }*/
 }
 
-function renderFavoritesShows(data) {
+function renderFavoriteShows() {
   // Creo una variable vacia con la que más tarde escribiré en el html
-  let listFavoriteHtml = "";
+  let listFavoritesHtml = "";
+  listFavoritesHtml += `<h2>My favorites shows</h2>`;
+  listFavoritesHtml += `<ul class="main__search_favorites-list js-favoritesList">`;
   // A través de un bucle, recorro mi API (array de objetos)
   // y extraigo los datos que necesito pintar
-  for (const favoriteShowItem of data) {
-    listFavoriteHtml += `<li id="${favoriteShowItem.id}" class="js-favoriteShowCard"><h4>${favoriteShowItem.name}</h4><img src="${favoriteShowItem.image.medium}" alt="${favoriteShowItem.name}"></li>`;
+  for (const showFavoriteItem of arrayFavoriteShows) {
+    listFavoritesHtml += `<li id="${showFavoriteItem.show.id}" class="js-showCard">`;
+    listFavoritesHtml += `<h3>${showFavoriteItem.show.name}</h3>`;
+    if (showFavoriteItem.show.image === null) {
+      listFavoritesHtml += `<img src="${imgDefault}" alt="${showFavoriteItem.show.name}">`;
+    } else {
+      listFavoritesHtml += `<img src="${showFavoriteItem.show.image.medium}" alt="${showFavoriteItem.show.name}">`;
+    }
+    listFavoritesHtml += `<input class="js-buttonRemove" type="button" value="X"/>`;
+    listFavoritesHtml += `</li>`;
   }
+  listFavoritesHtml += `</ul>`;
+
   // Lo pinto en el html
-  favoritesList.innerHTML = listFavoriteHtml;
-
-  // Invoco a la función que escucha mis fichas de series
-  // para que se puedan seleccionarlas como favoritas
-  addListenersToShows();
+  favoritesSection.innerHTML = listFavoritesHtml;
 }
 
+// Recuperar los favoritos del localStorage y mantenlos pintados en la lista
 function getFavoriteShows() {
-  // Recuperar los favoritos del localStorage
   arrayFavoriteShows = JSON.parse(localStorage.getItem("favoritesShows"));
-  renderFavoritesShows(arrayFavoriteShows);
+  renderFavoriteShows();
 }
-getFavoriteShows();

@@ -1,11 +1,18 @@
 // Función que pinta mis busquedas en la web
-function renderShows(data) {
+function renderShows() {
   // Creo una variable vacia con la que más tarde escribiré en el html
   let listHtml = "";
   // A través de un bucle, recorro mi API (array de objetos)
   // y extraigo los datos que necesito pintar
-  for (const showItem of data) {
-    listHtml += `<li id="${showItem.id}" class="js-showCard"><h3>${showItem.name}</h3><img src="${showItem.image.medium}" alt="${showItem.name}"></li>`;
+  for (const showItem of arrayData) {
+    listHtml += `<li id="${showItem.show.id}" class="js-showCard">`;
+    listHtml += `<h3>${showItem.show.name}</h3>`;
+    if (showItem.show.image === null) {
+      listHtml += `<img src="${imgDefault}" alt="${showItem.show.name}">`;
+    } else {
+      listHtml += `<img src="${showItem.show.image.medium}" alt="${showItem.show.name}">`;
+    }
+    listHtml += `</li>`;
   }
   // Lo pinto en el html
   showsList.innerHTML = listHtml;
