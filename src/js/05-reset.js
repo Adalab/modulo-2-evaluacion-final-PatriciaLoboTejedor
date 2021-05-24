@@ -10,8 +10,9 @@ function addListenersToFavoriteShows() {
 function handleRemoveAllFavorites() {
   // Vaciamos el array
   arrayFavoriteShows = [];
-  // y volvemos a pintar el array vacío
+  // y volvemos a pintar todo
   renderFavoriteShows();
+  renderShows();
   // Vaciamos el localStorage
   localStorage.clear("favoritesShows");
 }

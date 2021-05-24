@@ -5,8 +5,19 @@ function renderShows() {
   // A través de un bucle, recorro mi API (array de objetos)
   // y extraigo los datos que necesito pintar
   for (const showItem of arrayData) {
-    // compruebas si está en favoritos y le añades la clase
-    listHtml += `<li id="${showItem.show.id}" class="js-showCard">`;
+    // Buscar si la tarjeta clickada está en favoritos
+    const cardIsPresent = arrayFavoriteShows.find(
+      (favoriteId) => favoriteId.show.id === showItem.show.id
+    );
+    // Si la tarjeta en la que hacemos click está en el array de favoritos
+    if (cardIsPresent !== undefined) {
+      // Le añadimos la clase favorita
+      listHtml += `<li id="${showItem.show.id}" class="js-showCard favorites">`;
+    } else {
+      // Sino lo pintamos tal cual
+      listHtml += `<li id="${showItem.show.id}" class="js-showCard">`;
+    }
+
     listHtml += `<h3>${showItem.show.name}</h3>`;
     if (showItem.show.image === null) {
       listHtml += `<img src="${imgDefault}" alt="${showItem.show.name}">`;
