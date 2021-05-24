@@ -9,7 +9,7 @@ function addListenersToShows() {
 
 // Función que realiza las acciones de un elemento favorito
 function handleFavoriteClickCard(event) {
-  // Reconoce la tarjeta de cada serie pinches donde pinches
+  // Reconoce la tarjeta de cada serie pinches donde pinches de su li
   const selectedShowCard = event.currentTarget;
 
   // Reconoce el id del elemento clickado
@@ -20,7 +20,7 @@ function handleFavoriteClickCard(event) {
     (showItem) => showItem.show.id === selectedCardId
   );
 
-  // Buscamos si la tarjeta clickada está en favoritos
+  // Buscamos si la tarjeta clickada está en el array de favoritos
   const cardIsPresent = arrayFavoriteShows.find(
     (favId) => favId.show.id === selectedCardId
   );
@@ -42,6 +42,7 @@ function handleFavoriteClickCard(event) {
   setInLocalStorage();
 }
 
+// Función para pintar en la seccion los elementos favoritos
 function renderFavoriteShows() {
   // Creo una variable vacia con la que más tarde escribiré en el html
   let listFavoritesHtml = "";
@@ -70,7 +71,7 @@ function setInLocalStorage() {
   localStorage.setItem("favoritesShows", JSON.stringify(arrayFavoriteShows));
 }
 
-// Recuperar los favoritos del localStorage y mantenlos pintados en la lista
+// Función que recuperar los favoritos del localStorage y los mantiene pintados en la lista
 function getFavoriteShows() {
   arrayFavoriteShows = JSON.parse(localStorage.getItem("favoritesShows"));
   renderFavoriteShows();

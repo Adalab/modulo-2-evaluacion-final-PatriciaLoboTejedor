@@ -7,12 +7,12 @@ form.addEventListener("submit", handleSubmit);
 
 // Función que llama al API en función de la búsqueda del usuario
 function getShows() {
-  // Recoger el valor actual del input en minúsculas
+  // Recoge el valor actual del input en minúsculas
   searchText = inputSearch.value.toLowerCase();
   // Lo pinta sobre la url de la API para realizar la búsqueda
   const urlSearch = `//api.tvmaze.com/search/shows?q=${searchText}`;
 
-  // Traigo el API de series referente a la búsqueda
+  // Trae el API de series referente a la búsqueda
   fetch(urlSearch)
     .then((response) => response.json())
     .then((data) => {
@@ -24,15 +24,12 @@ function getShows() {
 }
 
 // Si se recarga la página de manera automática o sin querer...
-if (localStorage.getItem("favoritesShows") === null) {
-  getShows();
-} else {
-  // Sí tiene los datos guardados
+if (localStorage.getItem("favoritesShows") !== null) {
+  // y se tienen los datos guardados de favoritos, se devuelven
   getFavoriteShows();
 }
 
 // Evento que realiza la búsqueda cuando se hace click sobre search
 inputButton.addEventListener("click", getShows);
-
 // Evento que realiza la búsqueda cuando la usuaria hace enter
 form.addEventListener("submit", getShows);

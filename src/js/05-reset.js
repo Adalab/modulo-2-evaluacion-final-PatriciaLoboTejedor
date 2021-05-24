@@ -1,4 +1,4 @@
-// Eliminar individualmente los elementos favoritos de listado lateral
+// Función que escucha las cruces para eliminar individualmente los elementos favs
 function addListenersToFavoriteShows() {
   const buttonsRemove = document.querySelectorAll(".js-buttonRemove");
   for (const buttonRemove of buttonsRemove) {
@@ -6,7 +6,7 @@ function addListenersToFavoriteShows() {
   }
 }
 
-// Eliminar todos los favoritos del listado lateral y de localStorage
+// Función que elimina todos los favoritos del listado lateral y de localStorage
 function handleRemoveAllFavorites() {
   // Vaciamos el array
   arrayFavoriteShows = [];
@@ -16,5 +16,5 @@ function handleRemoveAllFavorites() {
   renderFavoriteShows();
   renderShows();
 }
-
+// Evento que borra todos los favoritos con el boton Detelete All
 buttonRemoveAll.addEventListener("click", handleRemoveAllFavorites);

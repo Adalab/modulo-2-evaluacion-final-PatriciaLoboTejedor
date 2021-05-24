@@ -2,10 +2,11 @@
 function renderShows() {
   // Creo una variable vacia con la que más tarde escribiré en el html
   let listHtml = "";
+
   // A través de un bucle, recorro mi API (array de objetos)
   // y extraigo los datos que necesito pintar
   for (const showItem of arrayData) {
-    // Buscar si la tarjeta clickada está en favoritos
+    // Buscar si la tarjeta clickada está en el array de favoritos
     const cardIsPresent = arrayFavoriteShows.find(
       (favoriteId) => favoriteId.show.id === showItem.show.id
     );
@@ -18,6 +19,7 @@ function renderShows() {
       listHtml += `<li id="${showItem.show.id}" class="main__shows_list-li js-showCard">`;
     }
 
+    // Recojemos su título y su imagen
     listHtml += `<h3 class="main__shows_list-li--title">${showItem.show.name}</h3>`;
     if (showItem.show.image === null) {
       listHtml += `<img src="${imgDefault}" alt="${showItem.show.name}">`;
@@ -30,6 +32,6 @@ function renderShows() {
   showsList.innerHTML = listHtml;
 
   // Invoco a la función que escucha mis fichas de series
-  // para que se puedan seleccionarlas como favoritas
+  // para que puedan ser seleccionarlas como favoritas
   addListenersToShows();
 }
