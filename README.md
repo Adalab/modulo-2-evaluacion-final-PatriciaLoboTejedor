@@ -1,124 +1,69 @@
-![Adalab](https://beta.adalab.es/resources/images/adalab-logo-155x61-bg-white.png)
+# Patricia Lobo Tejedor - Evaluación Final Módulo 2 - Promo M
 
-# Adalab web starter kit
-
-Ahoy! Este es nuestro Starter Kit creado en **node y gulp**. ¿Y qué es un Starter kit? Pues es una **plantilla de proyecto con funcionalidades preinstaladas y preconfiguradas**.
-
-Este Kit incluye un motor de plantillas HTML, el preprocesador SASS y un servidor local y muchas cosas más. El Kit nos ayuda a trabajar más cómodamente, nos automatiza tareas.
-
-En el Kit hay 3 tipos de ficheros y carpetas:
-
-- Los ficheros que están sueltos en la raíz del repositorio, como gulpfile.js, package.json... Son la configuración del proyecto y no necesitamos modificarlos.
-- La carpeta `src/`: son los ficheros de nuestra página web, como HTML, CSS, JS...
-- Las carpetas `public/` y `docs/`, que son generadas automáticamente cuando arrancamos el proyecto. El Kit lee los ficheros que hay dentro de `src/`, los procesa y los genera dentro de `public/` y `docs/`.
+En este repositorio de GitHub puedes encontrar los archivos generados fruto de la **Evaluación final del Módulo 2 para la Promo M de Patricia Lobo Tejedor**
 
 ## Guía de inicio rápido
 
-> **NOTA:** Necesitas tener instalado [Node JS](https://nodejs.org/) para trabajar con este Starter Kit:
+### **_Visualización online_**
 
-### Pasos a seguir cada vez que queremos arrancar un proyecto desde cero:
+Sigue el [siguente enlace](http://beta.adalab.es/modulo-2-evaluacion-final-PatriciaLoboTejedor) con el cual, a través de GitHub Pages podrás visualizar el proyecto directamente a través de un servidor online.
 
-1. **Crea tu propio repositorio.**
-1. Descarga este **Starter kit desde GitHub**.
-   - No recomendamos que clones este repo ya que no podrás añadir commits.
-1. **Copia todos los ficheros** de este Starter kit en la carpeta raíz de tu repositorio.
-   - Recuerda que debes copiar **también los ficheros ocultos**.
-   - Si has decidido clonar este repo, no debes copiar la carpeta `.git`. Si lo haces estarás machacando tu propio repositorio.
-1. **Abre una terminal** en la carpeta raíz de tu repositorio.
-1. **Instala las dependencias** locales ejecutando en la terminal el comando:
+### **_Visualización en local_**
 
-```bash
-npm install
-```
+Para poder realizar un arranque en local de este proyecto, se debe emplear el [Adalab - Web starter kit](https://github.com/Adalab/Adalab-web-starter-kit), ya que ha sido el sistema creado por [Adalab](https://adalab.es/) y sus profesores, gracias al cual, con NodeJS y Gulp, podemos implementar el desarrollo más sencillo e intuitivo del trabajo y su posible visualización en local. Para ello:
 
-### Pasos para arrancar el proyecto:
+1. Clona este repositorio en tu equipo.
+2. Realiza la instalación del paquete y sus dependencias mediante:
 
-Una vez hemos instalado las dependencias, vamos a arrancar el proyecto. **El proyecto hay que arrancarlo cada vez que te pongas a programar.** Para ello ejecuta el comando:
+   ```bash
+   npm install
+   ```
 
-```bash
-npm start
-```
+3. Una vez finalizada la instalación encontrarás que se ha añadido una carpeta denominada `node_modules/`.
+4. Por último, ejecuta el siguiente comando para que cargue un servidor local y poder hacer la visualización:
 
-Este comando:
+   ```bash
+   npm start
+   ```
 
-- **Abre una ventana de Chrome y muestra tu página web**, al igual que hace el plugin de VS Code Live Server (Go live).
-- También **observa** todos los ficheros que hay dentro de la carpeta `src/`, para que cada vez que modifiques un fichero **refresca tu página en Chrome**.
-- También **procesa los ficheros** HTML, SASS / CSS y JS y los **genera y guarda en la carpeta `public/`**. Por ejemplo:
-   - Convierte los ficheros SASS en CSS.
-   - Combina los diferentes ficheros de HTML y los agrupa en uno o varios ficheros HTML.
+> **NOTA:** Es necesario tener instalado **NodeJS**
 
-Después de ejecutar `npm start` ya puedes empezar a editar todos los ficheros que están dentro de la carpeta `src/` y programar cómodamente.
+## Enunciado y requisitos del ejercicio
 
-### Pasos para publicar el proyecto en GitHub Pages:
+El ejercicio consiste en desarrollar una aplicación web de **búsqueda de series de TV**, que nos permite des/marcar las series como favoritas y guardarlas en local storage. El ejercicio también tiene una parte de maquetación con HTML y Sass.
 
-Para generar tu página para producción ejecuta el comando:
+1. **Estructura básica**
+   La aplicación de búsqueda de series consta de dos partes:
 
-```bash
-npm run docs
-```
+   - Un campo de texto y un botón para buscar series por su título.
+   - Un listado de resultados de búsqueda donde aparece el cartel de la serie y el título.
 
-Y a continuación:
+2. **Búsqueda**
+   Al hacer clic sobre el botón de Buscar, la aplicación debe conectarse al API abierto de TVMaze para la búsqueda de series y construir la URL de búsqueda recogiendo el texto que ha introducido la usuaria en el
+   campo de búsqueda.
 
-1. Sube a tu repo la carpeta `docs/` que se te acaba de generar.
-1. Entra en la pestaña `settings` de tu repo.
-1. Y en el apartado de GitHub Pages activa la opción **master branch /docs folder**.
-1. Y ya estaría!!!
+   - Por cada show contenido en el resultado de la búsqueda hay que pintar una tarjeta donde mostramos una imagen de la serie y el título.
+   - En el caso de que el API no devuelva imagen para alguna serie, esta debe mostrar una imagen de relleno.
 
-Además, los comandos:
+3. **Favoritos**
+   Una vez aparecen los resultados de búsqueda, la usuaria puede indicar cuáles son sus series favoritas. Para ello, al hacer clic sobre una serie debe pasar lo siguiente:
 
-```bash
-npm run push-docs
-```
-o
+   - El color de fondo y el de fuente se intercambian, indicando que es una serie favorita.
+   - Hay que mostrar un listado en la parte izquierda de la pantalla, debajo del formulario de búsqueda, con las series favoritas.
+   - Las series favoritas deben seguir apareciendo a la izquierda aunque la usuaria realice otra búsqueda.
 
-```bash
-npm run deploy
-```
+4. **Almacenamiento local**
+   Hay que almacenar el listado de favoritos en el localStorage. De esta forma, al recargar la página el listado de favoritos se debe mostrarse.
 
-son un atajo que nos genera la versión de producción y hace push de la carpeta `docs/` del tirón. Te recomendamos ver el fichero `package.json` para aprender cómo funciona.
+5. **BONUS: Borrar favoritos**
 
-## Flujo de archivos con Gulp
+   - Al hacer clic sobre el icono de una 'x' al lado de cada favorito, hay que borrar el favorito clicado de la lista y del localStorage.
+   - Poder añadir/quitar como favorito al hacer clic sobre una serie del lado de la derecha. Y que, si realizamos una nueva búsqueda y sale una serie que ya es favorita, aparezca ya resaltada en los resultados de búsqueda (con colores de fondo y texto intercambiados).
+   - Incluir al final de la lista de favoritos un botón para borrar todos los favoritos a la vez.
 
-Estas tareas de Gulp producen el siguiente flujo de archivos:
+6. **BONUS: Afinar la maquetación**
+   Una vez terminada la parte de interacción, podemos centrarnos en la parte de maquetación donde tenemos libertad para decidir los estilos.
 
-![Gulp flow](./gulp-flow.png)
+## ¿Consideras que puedo aplicar alguna mejora?
 
-## `gulpfile.js` y `config.json`
-
-Nuestro **gulpfile.js** usa el fichero `config.json` de configuración con las rutas de los archivos a generar / observar.
-
-De esta manera separarmos las acciones que están en `gulpfile.js` de la configuración de las acciones que están en `config.json`.
-
-## Estructura de carpetas
-
-La estructura de carpetas tiene esta pinta:
-
-```
-src
- ├─ api // los ficheros de esta carpeta se copian en public/api/
- |  └─ data.json
- ├─ images
- |  └─ logo.jpg
- ├─ js // los ficheros de esta carpeta se concatenan en el fichero main.js y este se guarda en public/main.js
- |  ├─ main.js
- |  └─ events.js
- ├─ scss
- |  ├─ components
- |  ├─ core
- |  ├─ layout
- |  └─ pages
- └─ html
-    └─ partials
-```
-
-> **NOTA:** Los partials de HTML y SASS del proyecto son orientativos. Te recomendamos usar los que quieras, y borrar los que no uses.
-
-## Vídeotutoriales del Starter kit
-
-- [Qué es, trabajar con la versión de desarrollo y rutas relativas](https://www.youtube.com/watch?v=XwvhXvBijos)
-- [Migración de un proyecto, trabajar con la versión de producción y GitHub Pages](https://www.youtube.com/watch?v=qqGClcgt9Uc)
-- [Motor de plantillas](https://www.youtube.com/watch?v=4GwXOJ045Zg)
-
-## Falta algo?
-
-Echas de menos que el kit haga algo en concreto? Pidelo sin problema a través de las issues o si te animas a mejorarlo mándanos un PR :)
+Si has detectado un problema o consideras que alguna cosa puede mejorarse, estaría encantada de que habras un nuevo issue y conocer tu opinión, cada mejora es importante, muchas gracias.
