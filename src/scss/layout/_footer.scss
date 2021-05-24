@@ -4,10 +4,11 @@
   align-items: center;
   justify-content: space-between;
   padding: 15px 0px;
+  bottom: 0px;
 
   background: url(../images/header-search-show.png) center;
   background-size: cover;
-  height: 100px;
+  min-height: 10vh;
 
   @include tablet() {
     flex-direction: row;

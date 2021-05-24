@@ -7,7 +7,7 @@ body {
   font-family: $font-main;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  min-height: 80vh;
   &__search {
     &_form {
       display: flex;
@@ -75,6 +75,7 @@ body {
     }
   }
   &__shows {
+    background: lightgrey;
   }
 }
 .favorites {
