@@ -61,7 +61,7 @@ body {
         justify-content: center;
         align-items: flex-end;
         flex-wrap: wrap;
-        &-li {
+        .favorite-card {
           width: 100px;
           display: flex;
           flex-direction: column;
@@ -69,14 +69,14 @@ body {
           align-items: center;
           padding: 5px;
           margin: 0px 5px -40px 5px;
-          &--title {
+          &_title {
             font-size: 0.8rem;
             padding: 5px;
           }
           img {
             width: 60px;
           }
-          &--input {
+          &_input {
             position: relative;
             left: 30px;
             bottom: 25px;
@@ -111,6 +111,7 @@ body {
     }
     &_title {
       text-shadow: 2px 2px 1px grey;
+      padding-bottom: 10px;
     }
     &_list {
       display: flex;

@@ -48,14 +48,14 @@ function renderFavoriteShows() {
   // A través de un bucle, recorro mi API (array de objetos)
   // y extraigo los datos que necesito pintar
   for (const showFavoriteItem of arrayFavoriteShows) {
-    listFavoritesHtml += `<li id="${showFavoriteItem.show.id}" class="main__search_favorites_list-li js-showFavoriteCard">`;
-    listFavoritesHtml += `<h3 class="main__search_favorites_list-li--title>${showFavoriteItem.show.name}</h3>`;
+    listFavoritesHtml += `<li id="${showFavoriteItem.show.id}" class="favorite-card js-showFavoriteCard">`;
+    listFavoritesHtml += `<h3 class="favorite-card_title">${showFavoriteItem.show.name}</h3>`;
     if (showFavoriteItem.show.image === null) {
       listFavoritesHtml += `<img src="${imgDefault}" alt="${showFavoriteItem.show.name}">`;
     } else {
       listFavoritesHtml += `<img src="${showFavoriteItem.show.image.medium}" alt="${showFavoriteItem.show.name}">`;
     }
-    listFavoritesHtml += `<input class="main__search_favorites_list-li--input js-showCard" type="button" value="x"  id="${showFavoriteItem.show.id}" />`;
+    listFavoritesHtml += `<input class="favorite-card_input js-showCard" type="button" value="x"  id="${showFavoriteItem.show.id}" />`;
     listFavoritesHtml += `</li>`;
   }
 

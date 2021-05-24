@@ -34,5 +34,5 @@ if (localStorage.getItem("favoritesShows") === null) {
 // Evento que realiza la búsqueda cuando se hace click sobre search
 inputButton.addEventListener("click", getShows);
 
-// Evento que tiene lugar cuando la usuaria pulsa enter del teclado
+// Evento que realiza la búsqueda cuando la usuaria hace enter
 form.addEventListener("submit", getShows);
