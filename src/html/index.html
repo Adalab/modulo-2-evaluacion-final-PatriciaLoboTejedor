@@ -3,69 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Buscador de Series</title>
+    <title>Shows Search</title>
     <link
       href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./assets/css/main.css" />
-    <link rel="icon" href="" />
+    <link
+      rel="shortcut icon"
+      type="image/jpg"
+      href="assets/images/favicon.png"
+    />
   </head>
-  <body class="body">
-    <header class="header">
-      <img
-        class="header__logo"
-        src="./assets/images/header-logo.png"
-        alt="Search Shows"
-      />
-    </header>
-
-    <main class="main">
-      <section class="main__search">
-        <form class="main__search_form js-form" action="#">
-          <input
-            class="main__search_form-inputText js-inputText"
-            type="text"
-            value=""
-            placeholder="Look for your favorites shows..."
-          />
-          <input
-            class="main__search_form-inputButton js-inputButton"
-            type="button"
-            value="Search"
-          />
-        </form>
-      </section>
-
-      <article class="main__search-favorites js-favorites">
-        <h2 class="main__search-favorites_title">My favorites shows:</h2>
-        <ul class="main__search-favorites_list js-favoritesList">
-          <p>Save your favorites shows and consult them when you need</p>
-        </ul>
-        <input
-          class="main__search-favorites-buttonReset js-buttonRemoveAll"
-          type="button"
-          value="Delete All"
-        />
-      </article>
-
-      <section class="main__shows">
-        <h2 class="main__shows_title">Last shows search:</h2>
-        <ul class="main__shows_list js-showsList"></ul>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <small class="footer__info">
-        Shows Search Patricia Lobo &copy; 2021
-      </small>
-      <img
-        class="footer__logo"
-        src="./assets/images/header-logo.png"
-        alt="Search Shows"
-      />
-    </footer>
-
+  <body>
+    <include src="./partials/header.html" title="Buscador de Series"></include>
+    <include src="./partials/main.html"></include>
+    <include src="./partials/footer.html"></include>
     <script src="./assets/js/main.js"></script>
   </body>
 </html>
