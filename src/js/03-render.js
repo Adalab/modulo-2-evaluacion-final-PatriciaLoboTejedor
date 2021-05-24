@@ -12,10 +12,10 @@ function renderShows() {
     // Si la tarjeta en la que hacemos click está en el array de favoritos
     if (cardIsPresent !== undefined) {
       // Le añadimos la clase favorita
-      listHtml += `<li id="${showItem.show.id}" class="js-showCard favorites">`;
+      listHtml += `<li id="${showItem.show.id}" class="main__shows_list-li js-showCard favorites">`;
     } else {
       // Sino lo pintamos tal cual
-      listHtml += `<li id="${showItem.show.id}" class="js-showCard">`;
+      listHtml += `<li id="${showItem.show.id}" class="main__shows_list-li js-showCard">`;
     }
 
     listHtml += `<h3>${showItem.show.name}</h3>`;

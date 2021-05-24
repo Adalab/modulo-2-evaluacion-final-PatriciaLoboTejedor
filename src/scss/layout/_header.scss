@@ -7,8 +7,12 @@
 
   background: url(../images/header-search-show.png) center;
   background-size: cover;
+  @include tablet() {
+    align-items: flex-start;
+  }
 
   &__logo {
     height: 80px;
+    padding-left: 60px;
   }
 }

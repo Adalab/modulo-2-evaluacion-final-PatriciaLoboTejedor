@@ -5,10 +5,22 @@ body {
   padding: 20px;
   background-color: lightgrey;
   font-family: $font-main;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: max-content;
   min-height: 80vh;
+  @include tablet() {
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: max-content;
+    grid-column: 1/3;
+  }
   &__search {
+    padding-bottom: 5px;
+    @include tablet() {
+      grid-column: 1/2;
+      grid-row: 1/2;
+      padding-right: 20px;
+    }
     &_form {
       display: flex;
       flex-direction: column;
@@ -29,21 +41,29 @@ body {
       background: lightskyblue;
       color: white;
       text-align: center;
+      padding: 5px;
+      @include tablet() {
+        grid-column: 1/2;
+        grid-row: 2/3;
+        margin-right: 20px;
+      }
       &-title {
         padding: 10px;
+        text-shadow: 2px 2px 1px grey;
       }
       &-list {
         display: flex;
         justify-content: center;
+        align-items: flex-end;
         flex-wrap: wrap;
         li {
+          width: 100px;
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          width: 45%;
           padding: 5px;
-          margin: 5px;
+          margin: 0px 5px -40px 5px;
           h3 {
             font-size: 0.8rem;
             padding: 5px;
@@ -59,8 +79,9 @@ body {
             background: grey;
             border-radius: 5px;
             color: white;
-            padding: 5px;
+            padding: 2px 6px;
             cursor: pointer;
+            font-size: 1rem;
           }
         }
       }
@@ -75,7 +96,44 @@ body {
     }
   }
   &__shows {
-    background: lightgrey;
+    background: lightsteelblue;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    @include tablet() {
+      grid-column: 2/3;
+      grid-row: 1/3;
+    }
+    &_title {
+      text-shadow: 2px 2px 1px grey;
+    }
+    &_list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      @include tablet() {
+        flex-direction: row;
+        align-items: flex-end;
+        flex-wrap: wrap;
+      }
+      &-li {
+        max-width: 180px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin: 5px;
+        h3 {
+          padding: 10px 10px 0px 10px;
+        }
+        img {
+          max-width: 180px;
+          padding: 10px;
+        }
+      }
+    }
   }
 }
 .favorites {

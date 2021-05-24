@@ -55,7 +55,7 @@ function renderFavoriteShows() {
     } else {
       listFavoritesHtml += `<img src="${showFavoriteItem.show.image.medium}" alt="${showFavoriteItem.show.name}">`;
     }
-    listFavoritesHtml += `<input class="js-showCard" type="button" value="X"  id="${showFavoriteItem.show.id}" />`;
+    listFavoritesHtml += `<input class="js-showCard" type="button" value="x"  id="${showFavoriteItem.show.id}" />`;
     listFavoritesHtml += `</li>`;
   }
 
