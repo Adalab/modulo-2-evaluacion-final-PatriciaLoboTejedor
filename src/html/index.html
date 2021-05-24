@@ -21,7 +21,7 @@
           <input
             class="main__search_form-inputText js-inputText"
             type="text"
-            value=""
+            value="girl"
             placeholder="Look for your favorite shows"
           />
           <input
@@ -30,7 +30,13 @@
             value="Search"
           />
         </form>
-        <article class="main__search_favorites js-favorites"></article>
+        <article class="main__search_favorites js-favorites">
+          <h2>My favorites shows</h2>
+          <ul class="main__search_favorites-list js-favoritesList">
+            save your favorite series and consult them when you need
+          </ul>
+          <input class="js-buttonRemoveAll" type="button" value="Delete All" />
+        </article>
       </section>
       <section class="main__shows">
         <ul class="main__shows_list js-showsList"></ul>
