@@ -11,10 +11,15 @@
     <link rel="stylesheet" href="./assets/css/main.css" />
     <link rel="icon" href="" />
   </head>
-  <body>
+  <body class="body">
     <header class="header">
-      <h1>Shows Search</h1>
+      <img
+        class="header__logo"
+        src="./assets/images/header-logo.png"
+        alt="Search Shows"
+      />
     </header>
+
     <main class="main">
       <section class="main__search">
         <form class="main__search_form js-form" action="#">
@@ -22,7 +27,7 @@
             class="main__search_form-inputText js-inputText"
             type="text"
             value=""
-            placeholder="Look for your favorite shows"
+            placeholder="Look for your favorites shows..."
           />
           <input
             class="main__search_form-inputButton js-inputButton"
@@ -30,19 +35,37 @@
             value="Search"
           />
         </form>
-        <article class="main__search_favorites js-favorites">
-          <h2>My favorites shows</h2>
-          <ul class="main__search_favorites-list js-favoritesList">
-            save your favorite series and consult them when you need
-          </ul>
-          <input class="js-buttonRemoveAll" type="button" value="Delete All" />
-        </article>
       </section>
+
+      <article class="main__search_favorites js-favorites">
+        <h2 class="main__search_favorites-title">My favorites shows:</h2>
+        <ul class="main__search_favorites-list js-favoritesList">
+          <p>Save your favorites shows and consult them when you need</p>
+        </ul>
+        <input
+          class="main__search_favorites-buttonReset js-buttonRemoveAll"
+          type="button"
+          value="Delete All"
+        />
+      </article>
+
       <section class="main__shows">
+        <h2 class="main__shows_title">Last shows search:</h2>
         <ul class="main__shows_list js-showsList"></ul>
       </section>
     </main>
-    <footer class="footer"></footer>
+
+    <footer class="footer">
+      <small class="footer__info">
+        Shows Search Patricia Lobo &copy; 2021
+      </small>
+      <img
+        class="footer__logo"
+        src="./assets/images/header-logo.png"
+        alt="Search Shows"
+      />
+    </footer>
+
     <script src="./assets/js/main.js"></script>
   </body>
 </html>
