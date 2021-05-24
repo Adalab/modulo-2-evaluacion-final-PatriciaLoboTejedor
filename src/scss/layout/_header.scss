@@ -1,5 +1,14 @@
 .header {
   display: flex;
-  justify-content: space-evenly;
-  margin-bottom: 3rem;
+  flex-direction: column;
+  align-items: center;
+  height: 100px;
+
+  background: url(../images/header-search-show.png) center;
+  background-size: cover;
+
+  &__logo {
+    height: 80px;
+    margin: 10px;
+  }
 }

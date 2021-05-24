@@ -1,8 +1,28 @@
 .footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100vw;
-  padding: 1rem;
-  color: $color-secondary;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0px;
+
+  background: url(../images/header-search-show.png) center;
+  background-size: cover;
+  height: 100px;
+
+  @include tablet() {
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    height: 60px;
+    padding: 20px 40px;
+  }
+
+  &__info {
+    font-size: 14px;
+    color: white;
+  }
+
+  &__logo {
+    width: 103px;
+  }
 }

@@ -1,16 +1,83 @@
+body {
+  font-family: $font-main;
+}
 .main {
-  padding: 2rem;
-  background-color: $color-bg;
+  padding: 20px;
+  background-color: lightgrey;
   font-family: $font-main;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   &__search {
-    width: 40%;
+    &_form {
+      display: flex;
+      flex-direction: column;
+      &-inputText {
+        padding: 5px;
+        border-radius: 5px;
+      }
+      &-inputButton {
+        background: grey;
+        border-radius: 5px;
+        color: white;
+        padding: 5px 10px;
+        cursor: pointer;
+        margin: 5px 0px;
+      }
+    }
+    &_favorites {
+      background: lightskyblue;
+      color: white;
+      text-align: center;
+      &-title {
+        padding: 10px;
+      }
+      &-list {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        li {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 45%;
+          padding: 5px;
+          margin: 5px;
+          h3 {
+            font-size: 0.8rem;
+            padding: 5px;
+          }
+          img {
+            width: 60px;
+          }
+          input {
+            position: relative;
+            left: 30px;
+            bottom: 25px;
+            margin: 10px 0px;
+            background: grey;
+            border-radius: 5px;
+            color: white;
+            padding: 5px;
+            cursor: pointer;
+          }
+        }
+      }
+      &-buttonReset {
+        margin: 10px 0px;
+        background: grey;
+        border-radius: 5px;
+        color: white;
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+    }
   }
   &__shows {
   }
 }
 .favorites {
-  background-color: blue;
+  background-color: grey;
   color: white;
 }
