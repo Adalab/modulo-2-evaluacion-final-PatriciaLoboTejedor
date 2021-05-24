@@ -1,4 +1,4 @@
-// Eliminar elementos favoritos de listado lateral
+// Eliminar individualmente los elementos favoritos de listado lateral
 function addListenersToFavoriteShows() {
   const buttonsRemove = document.querySelectorAll(".js-buttonRemove");
   for (const buttonRemove of buttonsRemove) {
@@ -6,15 +6,15 @@ function addListenersToFavoriteShows() {
   }
 }
 
-// Eliminar todos los favoritos del listado lateral
+// Eliminar todos los favoritos del listado lateral y de localStorage
 function handleRemoveAllFavorites() {
   // Vaciamos el array
   arrayFavoriteShows = [];
-  // y volvemos a pintar todo
+  // Vaciamos el localStorage
+  localStorage.removeItem("favoritesShows");
+  // Y volvemos a pintar todo
   renderFavoriteShows();
   renderShows();
-  // Vaciamos el localStorage
-  localStorage.clear("favoritesShows");
 }
 
 buttonRemoveAll.addEventListener("click", handleRemoveAllFavorites);

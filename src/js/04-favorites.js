@@ -20,9 +20,9 @@ function handleFavoriteClickCard(event) {
     (showItem) => showItem.show.id === selectedCardId
   );
 
-  // Buscar si la tarjeta clickada está en favoritos
+  // Buscamos si la tarjeta clickada está en favoritos
   const cardIsPresent = arrayFavoriteShows.find(
-    (favoriteId) => favoriteId.show.id === itemShowInfo.show.id
+    (favId) => favId.show.id === selectedCardId
   );
 
   // Si el ID de la tarjeta en la que hacemos click no está en el array de favoritos
@@ -32,7 +32,7 @@ function handleFavoriteClickCard(event) {
   } else {
     // La quitamos o no la añadimos
     arrayFavoriteShows = arrayFavoriteShows.filter(
-      (favoriteId) => favoriteId.show.id !== itemShowInfo.show.id
+      (favoriteId) => favoriteId.show.id !== selectedCardId
     );
   }
 
@@ -58,7 +58,6 @@ function renderFavoriteShows() {
     listFavoritesHtml += `<input class="js-showCard" type="button" value="X"  id="${showFavoriteItem.show.id}" />`;
     listFavoritesHtml += `</li>`;
   }
-  listFavoritesHtml += `</ul>`;
 
   // Lo pinto en el html
   favoritesList.innerHTML = listFavoritesHtml;
@@ -75,4 +74,5 @@ function setInLocalStorage() {
 function getFavoriteShows() {
   arrayFavoriteShows = JSON.parse(localStorage.getItem("favoritesShows"));
   renderFavoriteShows();
+  renderShows();
 }
