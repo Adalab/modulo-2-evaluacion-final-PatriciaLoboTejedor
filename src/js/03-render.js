@@ -18,7 +18,7 @@ function renderShows() {
       listHtml += `<li id="${showItem.show.id}" class="main__shows_list-li js-showCard">`;
     }
 
-    listHtml += `<h3>${showItem.show.name}</h3>`;
+    listHtml += `<h3 class="main__shows_list-li--title>${showItem.show.name}</h3>`;
     if (showItem.show.image === null) {
       listHtml += `<img src="${imgDefault}" alt="${showItem.show.name}">`;
     } else {
