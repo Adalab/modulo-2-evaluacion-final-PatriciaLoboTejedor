@@ -146,6 +146,11 @@ body {
         align-items: center;
         margin: 5px;
         border-radius: 15px;
+        cursor: pointer;
+        &:hover {
+          background-color: rgba($color: #ffffff, $alpha: 0.6);
+          color: grey;
+        }
         &--title {
           padding: 10px 10px 0px 10px;
         }
