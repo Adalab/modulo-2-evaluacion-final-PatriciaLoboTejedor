@@ -8,6 +8,8 @@ En este repositorio de GitHub puedes encontrar los archivos generados fruto de l
 
 Sigue el [siguente enlace](http://beta.adalab.es/modulo-2-evaluacion-final-PatriciaLoboTejedor) con el cual, a través de GitHub Pages podrás visualizar el proyecto directamente a través de un servidor online.
 
+![image](https://user-images.githubusercontent.com/81681513/119481268-cb41ff00-bd52-11eb-92de-6366a0b6d2a7.png)
+
 ### **_Visualización en local_**
 
 Para poder realizar un arranque en local de este proyecto, se debe emplear el [Adalab - Web starter kit](https://github.com/Adalab/Adalab-web-starter-kit), ya que ha sido el sistema creado por [Adalab](https://adalab.es/) y sus profesores, gracias al cual, con NodeJS y Gulp, podemos implementar el desarrollo más sencillo e intuitivo del trabajo y su posible visualización en local. Para ello:
@@ -56,7 +58,6 @@ El ejercicio consiste en desarrollar una aplicación web de **búsqueda de serie
    Hay que almacenar el listado de favoritos en el localStorage. De esta forma, al recargar la página el listado de favoritos se debe mostrarse.
 
 5. **BONUS: Borrar favoritos**
-
    - Al hacer clic sobre el icono de una 'x' al lado de cada favorito, hay que borrar el favorito clicado de la lista y del localStorage.
    - Poder añadir/quitar como favorito al hacer clic sobre una serie del lado de la derecha. Y que, si realizamos una nueva búsqueda y sale una serie que ya es favorita, aparezca ya resaltada en los resultados de búsqueda (con colores de fondo y texto intercambiados).
    - Incluir al final de la lista de favoritos un botón para borrar todos los favoritos a la vez.
