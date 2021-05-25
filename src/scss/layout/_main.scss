@@ -39,7 +39,7 @@ body {
         color: white;
         padding: 5px 10px;
         cursor: pointer;
-        margin: 5px 0px;
+        margin: 10px 0px;
         font-weight: bolder;
         font-size: 1rem;
         &:hover {
@@ -73,24 +73,24 @@ body {
         flex-wrap: wrap;
         padding-bottom: 15px;
         .favorite-card {
-          width: 100px;
+          width: 150px;
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
           padding: 5px;
-          margin: 0px 5px -20px 5px;
+          margin: 0px 5px -30px 5px;
           &_title {
             font-size: 0.8rem;
             padding: 5px;
           }
           img {
-            width: 60px;
-            border-radius: 10px;
+            width: 90px;
+            border-radius: 7px;
           }
           &_input {
             position: relative;
-            left: 30px;
+            left: 45px;
             bottom: 25px;
             margin: 10px 0px;
             background: grey;
