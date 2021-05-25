@@ -56,7 +56,7 @@ function renderFavoriteShows() {
     } else {
       listFavoritesHtml += `<img src="${showFavoriteItem.show.image.medium}" alt="${showFavoriteItem.show.name}">`;
     }
-    listFavoritesHtml += `<input class="favorite-card_input js-showCard" type="button" value="x"  id="${showFavoriteItem.show.id}" />`;
+    listFavoritesHtml += `<div class="favorite-card_input js-showCard" id="${showFavoriteItem.show.id}"><i class="fas fa-times"></i></div>`;
     listFavoritesHtml += `</li>`;
   }
 

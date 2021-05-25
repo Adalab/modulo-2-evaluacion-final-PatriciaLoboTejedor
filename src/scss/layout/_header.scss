@@ -12,9 +12,9 @@
   }
 
   &__logo {
-    height: 80px;
+    height: 60px;
     @include tablet() {
-      padding-left: 60px;
+      padding-left: 40px;
     }
   }
 }

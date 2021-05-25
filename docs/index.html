@@ -8,6 +8,10 @@
       href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://kit.fontawesome.com/a22a8f4330.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="./assets/css/main.css" />
     <link
       rel="shortcut icon"
@@ -33,11 +37,9 @@
             value=""
             placeholder="Look for your favorites shows..."
           />
-          <input
-            class="main__search_form-inputButton js-inputButton"
-            type="button"
-            value="Search"
-          />
+          <button class="main__search_form-inputButton js-inputButton" type="button">
+            <i class="fas fa-search"></i></i> Search
+          </button>
         </form>
       </section>
 
@@ -46,11 +48,9 @@
         <ul class="main__search-favorites_list js-favoritesList">
           <p>Save your favorites shows and consult them when you need</p>
         </ul>
-        <input
-          class="main__search-favorites-buttonReset js-buttonRemoveAll"
-          type="button"
-          value="Delete All"
-        />
+        <div class="main__search-favorites-buttonReset js-buttonRemoveAll">
+          <i class="far fa-trash-alt"></i> Delete All
+        </div>
       </article>
 
       <section class="main__shows">
