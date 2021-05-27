@@ -63,7 +63,7 @@ function renderFavoriteShows() {
   // Lo pinto en el html
   favoritesList.innerHTML = listFavoritesHtml;
 
-  addListenersToFavoriteShows();
+  /*addListenersToFavoriteShows();*/
 }
 
 // Guardamos los favoritos en localStorage para poder recupearlo al recargar
@@ -77,3 +77,11 @@ function getFavoriteShows() {
   renderFavoriteShows();
   renderShows();
 }
+
+// Boton LOG que pintara el numero de favoritos en el array
+const buttonLog = document.querySelector(".js-log");
+function favoriteLong() {
+  console.log(`tienes ${arrayFavoriteShows.length} favoritos`);
+}
+
+buttonLog.addEventListener("click", favoriteLong);

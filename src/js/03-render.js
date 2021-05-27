@@ -21,6 +21,13 @@ function renderShows() {
 
     // Recojemos su título y su imagen
     listHtml += `<h3 class="main__shows_list-li--title">${showItem.show.name}</h3>`;
+    listHtml += `<p >${showItem.show.language}</p>`;
+    let arrayLanguages = ["English", "Spanish", "Portuguese"];
+    for (const language of arrayLanguages) {
+      if (showItem.show.language === language) {
+        listHtml += `<p>Recomendado</p>`;
+      }
+    }
     if (showItem.show.image === null) {
       listHtml += `<img src="${imgDefault}" alt="${showItem.show.name}">`;
     } else {
